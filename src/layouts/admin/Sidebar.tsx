@@ -33,9 +33,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, toggleSidebar }) => {
           {/* Ẩn Logo Icon khi thu gọn */}
           {!isCollapsed && (
             <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-              <div className="w-8 h-8 rounded-full border-2 border-red-500 flex items-center justify-center">
-                 <span className="text-xs text-red-600 font-bold">L</span>
-              </div>
+                <img alt="Logo Bệnh viện 108" src='https://benhvien108.vn/Assets/images/logo_benhvien_108.png'/>
             </div>
           )}
           
