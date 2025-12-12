@@ -1,6 +1,7 @@
 import type { RouteObject } from 'react-router-dom';
 import AdminLayout from '../layouts/AdminLayout';
-import Dashboard from '../pages/Dashboard'; // Import Dashboard từ file vừa tạo
+import Dashboard from '../pages/Dashboard';
+import Notifications from '../pages/Notifications'; // <--- Import component mới
 import { PATH } from '../constants/path';
 
 const adminRoutes: RouteObject = {
@@ -8,16 +9,19 @@ const adminRoutes: RouteObject = {
   element: <AdminLayout />,
   children: [
     {
+      index: true, 
+      element: <Dashboard /> 
+    },
+    {
       path: PATH.DASHBOARD, 
       element: <Dashboard />,
     },
-    // Bạn có thể thêm các route con khác ở đây, ví dụ:
-    // { path: PATH.NOTIFICATIONS, element: <NotificationsPage /> }
+    // Thêm route cho trang thông báo
     {
-        // Mặc định redirect về dashboard khi vào /admin
-        index: true, 
-        element: <Dashboard /> 
-    }
+      path: PATH.NOTIFICATIONS,
+      element: <Notifications />,
+    },
+    // ... các routes khác
   ]
 };
 
